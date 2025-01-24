@@ -10,7 +10,7 @@
  
 ### COFFEEROASTERS SUBSCRIPTION SITE - FRONTEND MENTOR CHALLENGE
 
-This project is a responsive 3-page subscription website for Coffeeroasters, featuring a homepage, about page, and a subscription plan creation page,
+This project is a responsive 3-page subscription website for Coffeeroasters, featuring a homepage, about page, and a subscription plan creation page.
 
 ## Technologies Used
 
