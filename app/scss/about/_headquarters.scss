@@ -1,0 +1,88 @@
+@use '../util' as u;
+
+.headquarters {
+	&__wrapper {
+		margin-block-start: u.rem(120);
+	}
+
+	&__title {
+		text-align: center;
+		color: var(--grey);
+		padding-block-end: u.rem(72);
+		font-size: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+		}
+
+		@include u.breakpoint-up(xlarge) {
+			padding-inline-start: u.rem(85);
+		}
+	}
+
+	&__items {
+		list-style-type: none;
+		text-align: center;
+		padding: 0;
+
+		@include u.breakpoint-up(medium) {
+			display: flex;
+			align-items: center;
+			gap: u.rem(20);
+			text-align: left;
+		}
+
+		@include u.breakpoint-up(large) {
+			gap: u.rem(95);
+		}
+
+		@include u.breakpoint-up(xlarge) {
+			padding-inline-start: u.rem(85);
+		}
+	}
+
+	&__item {
+		&--canada {
+			.headquarters__image {
+				width: 51.56px;
+			}
+		}
+
+		&--australia {
+			.headquarters__image {
+				width: 48.97px;
+			}
+		}
+	}
+
+	&__image {
+		width: 40.84px;
+		margin-inline: auto;
+		margin-block-end: u.rem(48);
+
+		@include u.breakpoint-up(medium) {
+			margin-inline: 0;
+		}
+	}
+
+	&__country {
+		font-size: u.rem(28);
+		margin-block-end: u.rem(22);
+
+		@include u.breakpoint-up(medium) {
+			font-size: u.rem(24);
+		}
+
+		@include u.breakpoint-up(large) {
+			font-size: u.rem(32);
+		}
+	}
+
+	&__address {
+		display: grid;
+	}
+
+	@include u.breakpoint-up(medium) {
+		margin: 0;
+	}
+}

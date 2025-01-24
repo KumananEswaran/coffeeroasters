@@ -1,0 +1,62 @@
+@use '../util' as u;
+
+.hero {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+
+		@include u.breakpoint-up(medium) {
+			align-items: flex-start;
+		}
+	}
+
+	&__img {
+		height: u.rem(500);
+		border-radius: 10px;
+		object-fit: cover;
+		margin-inline: auto;
+
+		@include u.breakpoint-up(medium) {
+			height: u.rem(500);
+		}
+
+		@include u.breakpoint-up(large) {
+			height: u.rem(600);
+		}
+	}
+
+	&__text {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+
+			margin-inline-start: u.rem(58);
+			margin-inline-start: clamp(u.rem(58), 2.86rem + 3.27vw, u.rem(85));
+		}
+	}
+
+	&__title {
+		color: var(--light-cream-bg);
+
+		@include u.breakpoint-up(medium) {
+			max-width: 10ch;
+		}
+	}
+
+	&__content {
+		color: var(--light-cream-bg);
+		max-width: 35ch;
+		margin-inline: auto;
+
+		@include u.breakpoint-up(medium) {
+			margin-inline: 0;
+			max-width: 45ch;
+		}
+	}
+}

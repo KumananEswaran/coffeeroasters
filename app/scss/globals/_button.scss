@@ -1,0 +1,30 @@
+@use '../util' as u;
+
+.button {
+	display: inline-block;
+	font-family: u.$font-title;
+	font-size: u.rem(18);
+	line-height: 1.4;
+	font-weight: 900;
+	padding: u.rem(15) u.rem(31) u.rem(16);
+	border-radius: u.rem(10);
+	transition-property: background-color, border, color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+
+	&.primary {
+		background-color: var(--dark-cyan);
+		color: var(--light-cream-bg);
+
+		&:hover,
+		&:focus {
+			background-color: var(--button-primary-bg-hover);
+		}
+	}
+
+	&.disabled {
+		background-color: var(--button-disabled-bg);
+		color: var(--light-cream-bg);
+		pointer-events: none;
+	}
+}

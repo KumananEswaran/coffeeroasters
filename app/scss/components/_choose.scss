@@ -1,0 +1,139 @@
+@use '../util' as u;
+
+.choose {
+	&__wrapper {
+		background-color: var(--choose-bg);
+		color: var(--light-cream-bg);
+		margin-block-start: u.rem(120);
+		margin-block-start: clamp(u.rem(120), 5.23rem + 9.7vw, u.rem(200));
+		border-radius: 10px;
+	}
+
+	&__text {
+		text-align: center;
+		margin-block-start: u.rem(120);
+
+		@include u.breakpoint-up(medium) {
+			margin-block-start: u.rem(144);
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-block-start: u.rem(200);
+		}
+	}
+
+	&__title {
+		line-height: 1;
+		padding-block-start: u.rem(64);
+		margin-block-end: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			line-height: 1.5;
+			padding-block-start: u.rem(56);
+		}
+
+		@include u.breakpoint-up(large) {
+			padding-block-start: u.rem(100);
+			line-height: 1.2;
+			margin-block-end: u.rem(32);
+		}
+	}
+
+	&__content {
+		margin-inline: auto;
+		max-width: 32ch;
+		padding-block-end: u.rem(661);
+
+		@include u.breakpoint-up(medium) {
+			max-width: 58ch;
+			padding-block-end: u.rem(368);
+		}
+
+		@include u.breakpoint-up(large) {
+			padding-block-end: u.rem(317);
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		top: 54%;
+		transform: translateY(-54%);
+
+		@include u.breakpoint-up(medium) {
+			top: 60%;
+			transform: translateY(-60%);
+		}
+
+		@include u.breakpoint-up(large) {
+			flex-direction: row;
+			justify-content: center;
+			gap: 30px;
+			top: 80%;
+			transform: translateY(-80%);
+		}
+	}
+
+	&__item {
+		background-color: var(--dark-cyan);
+		color: var(--light-cream-bg);
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: u.rem(56);
+		padding-block: u.rem(72) u.rem(48);
+		margin-inline: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			text-align: left;
+			padding-block: u.rem(41);
+			margin-inline: u.rem(58);
+		}
+
+		@include u.breakpoint-up(large) {
+			flex-direction: column;
+			text-align: center;
+			padding-inline: u.rem(37) u.rem(38);
+			padding-block-start: u.rem(72);
+			margin-inline: 0;
+		}
+	}
+
+	&__img {
+		width: u.rem(72);
+	}
+
+	&__item-text {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			gap: u.rem(16);
+		}
+	}
+
+	&__item-title {
+		margin: 0;
+	}
+
+	&__item-content {
+		max-width: 23ch;
+		margin: 0;
+
+		@include u.breakpoint-up(medium) {
+			max-width: 40ch;
+		}
+
+		@include u.breakpoint-up(large) {
+			max-width: 30ch;
+		}
+	}
+}

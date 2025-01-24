@@ -1,0 +1,100 @@
+@use '../util' as u;
+
+.topnav {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 32px 40px;
+
+		@include u.breakpoint-down(small) {
+			display: grid;
+			grid-auto-flow: column;
+			grid-template-columns: 26fr 1fr;
+		}
+
+		@include u.breakpoint-up(medium) {
+			padding-block: 40px 53px;
+		}
+
+		@include u.breakpoint-up(large) {
+			padding-block: 43.56px 43.44px;
+		}
+	}
+
+	&__logo {
+		width: u.rem(163);
+
+		@include u.breakpoint-up(medium) {
+			width: u.rem(236);
+		}
+	}
+
+	&__links {
+		@include u.breakpoint-down(small) {
+			flex-direction: column;
+			position: fixed;
+			text-align: center;
+			inset: 10% 0 0 0;
+			z-index: 1000;
+			background: linear-gradient(
+				0.5turn,
+				var(--light-cream-bg) 30%,
+				var(--light-cream-bg-transparent)
+			);
+			padding-block-start: u.rem(40);
+			transform: translateX(100%);
+			transition: transform 500ms ease-in-out;
+
+			&[data-visible='true'] {
+				transform: translateX(0);
+			}
+		}
+
+		display: flex;
+		gap: 33px;
+	}
+
+	&__mobile-toggle {
+		@include u.breakpoint-down(small) {
+			display: block;
+			// position: absolute;
+			z-index: 2000;
+			background: transparent;
+			background-image: url(/assets/shared/mobile/icon-hamburger.svg);
+			background-repeat: no-repeat;
+			width: u.rem(16);
+			aspect-ratio: 1;
+			border: none;
+			cursor: pointer;
+
+			&:focus-visible {
+				outline: 3px solid var(--dark-grey-blue);
+				outline-offset: 5px;
+			}
+
+			&[aria-expanded='true'] {
+				background-image: url(/assets/shared/mobile/icon-close.svg);
+			}
+		}
+
+		display: none;
+	}
+
+	&__link {
+		color: var(--grey);
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus {
+			color: var(--dark-grey-blue);
+		}
+
+		@include u.breakpoint-down(small) {
+			font-family: u.$font-title;
+			font-size: u.rem(24);
+			line-height: 1.3;
+			color: var(--dark-grey-blue);
+		}
+	}
+}

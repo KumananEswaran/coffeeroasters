@@ -1,0 +1,123 @@
+@use '../util' as u;
+
+.works {
+	margin-top: -520px;
+
+	@include u.breakpoint-up(medium) {
+		margin-top: -240px;
+	}
+	&__wrapper {
+		text-align: center;
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+		}
+
+		@include u.breakpoint-up(large) {
+			padding-inline-start: u.rem(85);
+		}
+	}
+
+	&__header {
+		font-size: u.rem(24);
+		line-height: 1.3;
+		color: var(--grey);
+		margin-block-end: u.rem(80);
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: u.rem(56);
+
+		@include u.breakpoint-up(medium) {
+			flex-direction: row;
+			align-items: flex-start;
+			gap: 0;
+			justify-content: space-between;
+		}
+
+		@include u.breakpoint-up(large) {
+			justify-content: flex-start;
+		}
+
+		@include u.breakpoint-up(medium) {
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				height: 2px;
+				width: 62%;
+				background-color: var(--pale-orange);
+				margin-block-start: 12px;
+				margin-inline-start: 30px;
+				z-index: -1;
+			}
+		}
+
+		@include u.breakpoint-up(large) {
+			&::before {
+				width: 56%;
+				max-width: 650px;
+			}
+		}
+	}
+
+	&__steps {
+		font-family: u.$font-title;
+		font-size: u.rem(72);
+		line-height: 1;
+		color: var(--pale-orange);
+	}
+
+	&__title {
+		margin-block: u.rem(24);
+		font-size: u.rem(28);
+
+		@include u.breakpoint-up(medium) {
+			max-width: 10ch;
+		}
+	}
+
+	&__content {
+		margin: 0;
+
+		@include u.breakpoint-up(medium) {
+			padding-inline-end: u.rem(20);
+			max-width: 36ch;
+		}
+
+		@include u.breakpoint-up(large) {
+			padding-inline-end: u.rem(40);
+		}
+	}
+
+	&__button {
+		margin-block-start: u.rem(79);
+
+		@include u.breakpoint-up(medium) {
+			margin-block-start: u.rem(44);
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-block-start: u.rem(64);
+		}
+	}
+
+	&__shapes {
+		@include u.breakpoint-up(medium) {
+			width: 31px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background-color: var(--light-cream-bg);
+			border: 2px solid var(--dark-cyan);
+			z-index: 1;
+			margin-block-end: u.rem(48);
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-block-end: u.rem(67);
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@use '../util' as u;
+
+.commitment {
+	margin-block-start: u.rem(140);
+
+	&__wrapper {
+		margin-block-end: u.rem(198);
+
+		@include u.breakpoint-up(medium) {
+			display: flex;
+			align-items: center;
+			gap: u.rem(60);
+			margin-block-end: u.rem(304);
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-block-end: u.rem(256);
+		}
+	}
+
+	&__image {
+		margin-inline: auto;
+		width: 327px;
+		height: 400px;
+		border-radius: 10px;
+
+		@include u.breakpoint-up(medium) {
+			content: url(/assets/about/tablet/image-commitment.jpg);
+			width: 281px;
+			height: 470px;
+		}
+
+		@include u.breakpoint-up(large) {
+			content: url(/assets/about/desktop/image-commitment.jpg);
+			width: 445px;
+			height: 520px;
+		}
+	}
+
+	&__text {
+		margin-block-start: u.rem(48);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+			margin-block-start: 0;
+		}
+	}
+
+	&__title {
+		margin-block-end: u.rem(38);
+	}
+
+	&__content {
+		margin: 0;
+		@include u.breakpoint-up(medium) {
+			max-width: 90ch;
+		}
+	}
+}

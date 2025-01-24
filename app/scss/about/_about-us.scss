@@ -1,0 +1,51 @@
+@use '../util' as u;
+
+.about-us {
+	&__wrapper {
+		background-image: url(/assets/about/mobile/image-hero-whitecup.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 10px;
+
+		@include u.breakpoint-up(medium) {
+			background-image: url(/assets/about/tablet/image-hero-whitecup.jpg);
+		}
+
+		@include u.breakpoint-up(large) {
+			background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		gap: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+			align-items: flex-start;
+			padding-inline: u.rem(58);
+			gap: u.rem(30);
+		}
+	}
+
+	&__title {
+		color: var(--light-cream-bg);
+		padding-block-start: u.rem(111);
+	}
+
+	&__content {
+		color: var(--light-cream-bg);
+		padding-block-end: u.rem(87);
+		padding-inline: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+			align-items: flex-start;
+			padding-inline: 0;
+			max-width: 47ch;
+		}
+	}
+}

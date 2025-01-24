@@ -1,0 +1,35 @@
+@use '../util' as u;
+
+.summary {
+	&__text {
+		background-color: var(--summary-bg);
+		padding: u.rem(32) u.rem(24);
+		border-radius: 10px;
+	}
+
+	&__header {
+		color: #979797;
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	&__content {
+		color: #ffffff;
+		line-height: 1.7;
+		margin-block-start: u.rem(8);
+
+		span {
+			color: var(--dark-cyan);
+		}
+	}
+
+	&__create {
+		display: flex;
+		justify-content: center;
+		margin-block-start: u.rem(56);
+
+		@include u.breakpoint-up(large) {
+			justify-content: flex-end;
+		}
+	}
+}

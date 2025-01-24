@@ -1,0 +1,61 @@
+@use '../util' as u;
+
+.create-plan {
+	&__wrapper {
+		background-image: url(/assets/plan/mobile/image-hero-blackcup.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 10px;
+
+		@include u.breakpoint-up(medium) {
+			background-image: url(/assets/plan/tablet/image-hero-blackcup.jpg);
+		}
+
+		@include u.breakpoint-up(large) {
+			background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		gap: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+			align-items: flex-start;
+			padding-inline: u.rem(58);
+			gap: u.rem(30);
+		}
+	}
+
+	&__title {
+		font-size: u.rem(40);
+		line-height: 1;
+		color: var(--light-cream-bg);
+		padding-block-start: u.rem(111);
+
+		@include u.breakpoint-up(medium) {
+			font-size: u.rem(48);
+		}
+
+		@include u.breakpoint-up(large) {
+			font-size: u.rem(72);
+		}
+	}
+
+	&__content {
+		color: var(--light-cream-bg);
+		padding-block-end: u.rem(87);
+		padding-inline: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			text-align: left;
+			align-items: flex-start;
+			padding-inline: 0;
+			max-width: 47ch;
+		}
+	}
+}

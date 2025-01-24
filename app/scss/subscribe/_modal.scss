@@ -1,0 +1,63 @@
+@use '../util' as u;
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	&__wrapper {
+		margin-block-start: u.rem(35);
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		animation-name: modalopen;
+		animation-duration: var(--modal-duration);
+		max-width: 540px;
+
+		@include u.breakpoint-up(medium) {
+			margin-block-start: u.rem(150);
+		}
+	}
+
+	&__header {
+		background-color: var(--summary-bg);
+		color: #ffffff;
+		padding: u.rem(28) u.rem(24);
+		font-size: u.rem(28);
+	}
+
+	&__body {
+		background-color: var(--light-cream-bg);
+		padding: u.rem(40) u.rem(24);
+	}
+
+	&__content {
+		font-size: u.rem(24);
+		color: var(--grey);
+
+		span {
+			color: var(--dark-cyan);
+		}
+	}
+
+	&__button {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+@keyframes modalopen {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

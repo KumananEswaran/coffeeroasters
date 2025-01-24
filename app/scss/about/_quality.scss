@@ -1,0 +1,76 @@
+@use '../util' as u;
+
+.quality {
+	&__wrapper {
+		background-color: var(--quality-bg);
+		color: var(--light-cream-bg);
+		border-radius: 10px;
+
+		@include u.breakpoint-up(large) {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__image {
+		position: relative; /* Make the image positionable */
+		top: 50%;
+		transform: translateY(-50%);
+		width: 279px;
+		height: 156px;
+		margin-inline: auto;
+
+		@include u.breakpoint-up(medium) {
+			content: url(/assets/about/tablet/image-quality.jpg);
+			width: 573px;
+			height: 320px;
+		}
+
+		@include u.breakpoint-up(medium) {
+			content: url(/assets/about/desktop/image-quality.jpg);
+			width: 445px;
+			height: 474px;
+
+			top: 20%;
+			transform: translateY(-20%);
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block-start: -80px;
+		padding-block-start: u.rem(64);
+		text-align: center;
+		padding-inline: u.rem(24);
+
+		@include u.breakpoint-up(medium) {
+			margin-block-start: -96px;
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-block-start: 0px;
+			align-items: flex-start;
+			padding-inline: u.rem(85) u.rem(125);
+		}
+	}
+
+	&__title {
+		padding-block-end: u.rem(24);
+	}
+
+	&__content {
+		text-align: center;
+		padding-block-end: u.rem(61);
+
+		@include u.breakpoint-up(medium) {
+			max-width: 63ch;
+		}
+
+		@include u.breakpoint-up(large) {
+			text-align: left;
+			max-width: 55ch;
+		}
+	}
+}

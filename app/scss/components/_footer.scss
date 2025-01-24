@@ -1,0 +1,76 @@
+@use '../util' as u;
+
+.footer {
+	margin-block-end: u.rem(72);
+	&__wrapper {
+		display: grid;
+		justify-content: center;
+		gap: u.rem(48);
+		background-color: var(--footer-bg);
+		border-radius: 10px;
+		padding-block: u.rem(54);
+		margin-block-start: u.rem(120);
+
+		@include u.breakpoint-up(large) {
+			grid-template-columns: repeat(5, auto);
+			justify-content: space-between;
+			align-items: center;
+			padding-inline: u.rem(85);
+		}
+	}
+
+	&__logo-image {
+		width: u.rem(236);
+	}
+
+	&__column-1 {
+		@include u.breakpoint-up(large) {
+			grid-column: 2 / span 2;
+		}
+	}
+
+	&__column-2 {
+		@include u.breakpoint-up(large) {
+			grid-column-end: 6;
+		}
+	}
+
+	&__links {
+		display: grid;
+		justify-content: center;
+		gap: u.rem(14);
+		text-align: center;
+
+		@include u.breakpoint-up(medium) {
+			display: flex;
+			gap: u.rem(33);
+		}
+	}
+
+	&__links-social {
+		display: flex;
+		justify-content: center;
+		gap: u.rem(24);
+	}
+
+	&__link {
+		color: var(--grey);
+
+		&:hover,
+		&:focus {
+			color: var(--light-cream-bg);
+
+			.footer__social-path {
+				fill: var(--pale-orange);
+			}
+		}
+	}
+
+	&__social {
+		width: u.rem(24);
+	}
+
+	&__social-path {
+		fill: var(--light-cream-bg);
+	}
+}
